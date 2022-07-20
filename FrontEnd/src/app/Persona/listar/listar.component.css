@@ -1,0 +1,15 @@
+.boton-template {
+    background-color: #4C0B5F;
+    border-radius: 0.5vw;
+    border-color: #8904B1;
+    border-width: 3px;
+    color: white;
+    text-align: center;
+    /*font-size: 1.3vw;*/
+    font-style: inherit;
+    margin: 10px;
+}
+
+.margenbutton {
+    margin: 5px;
+}
