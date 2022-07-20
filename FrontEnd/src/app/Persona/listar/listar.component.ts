@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalificacionService } from 'src/app/Service/service.service';
 
 @Component({
   selector: 'app-listar',
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarComponent implements OnInit {
 
-  constructor() { }
+  lista:any=[];
+  constructor(private calificacionService: CalificacionService) { }
 
   ngOnInit(): void {
+    this.listarCalificacion();
+  }
+
+  listarCalificacion()
+  {
+    this.calificacionService.getCalificacion().subscribe(
+      res=>{
+        this.lista=res;
+        console.log(res);
+      },
+      err=>console.log(err)
+    );
+
+  }
+
+  eliminar(id:string)
+  {
+    this.calificacionService.deleteCalificacion(id).subscribe(
+      res=>{this.ngOnInit();},
+      err=>console.log(err)
+    );
   }
 
 }

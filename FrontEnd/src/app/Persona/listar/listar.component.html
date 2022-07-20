@@ -14,10 +14,10 @@
                     </tr>
                 </thead>
                 <thead>
-                    <tr class="text-center">
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let cal of lista">
+                        <td>{{cal.id}}</td>
+                        <td>{{cal.nombre}}</td>
+                        <td>{{cal.correo}}</td>
                         <td>
                             <button class="btn btn-warning margenbutton">Editar</button>
                             <button class="btn btn-danger">Eliminar</button>
