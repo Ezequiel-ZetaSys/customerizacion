@@ -10,7 +10,7 @@ import { Calificacion } from 'src/app/Modelo/Calificacion';
 })
 export class AddComponent implements OnInit {
 
-  calificacionNueva: Calificacion={id:2,nombre:'',correo:'',calificacion:3,obs:''};
+  calificacionNueva: Calificacion={id:0,nombre:'',correo:'',calificacion:5,obs:''};
 
   constructor(private calificacionService: CalificacionService, private router:Router) { }
 

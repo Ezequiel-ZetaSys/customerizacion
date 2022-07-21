@@ -20,7 +20,6 @@ export class ListarComponent implements OnInit {
     this.calificacionService.getCalificaciones().subscribe(
       res=>{
         this.lista=res;
-        console.log(res);
       },
       err=>console.log(err)
     );

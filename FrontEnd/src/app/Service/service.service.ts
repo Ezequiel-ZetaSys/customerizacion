@@ -23,7 +23,7 @@ export class CalificacionService {
 
   saveCalificacion(calificacion: Calificacion):Observable<any>
   {
-    return this.http.post(this.url, calificacion );
+    return this.http.post(this.url, calificacion);
   }
 
   editCalificacion(id:string, calificacion: Calificacion):Observable<any>
