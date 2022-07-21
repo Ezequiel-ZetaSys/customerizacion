@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { LoginComponent } from './Usuario/login/login.component';
 import { RegistroComponent } from './Usuario/registro/registro.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { RegistroComponent } from './Usuario/registro/registro.component';
     AddComponent,
     LoginComponent,
     RegistroComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,

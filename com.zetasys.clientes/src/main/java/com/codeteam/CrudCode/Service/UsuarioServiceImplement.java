@@ -36,16 +36,18 @@ public class UsuarioServiceImplement  implements UsuarioService{
     
     @Override
     @Transactional(readOnly=true)
-    public Usuario findById(Integer id)
+    public Usuario findById(String user)
     {
+        List<Usuario> usuario = findAll();
+        int id = 0;
+        for (Usuario task: usuario) {
+            if (task.getUser().equals(user)) {
+                id = task.getId();
+            }
+        }
         return usuarioDao.findById(id).orElse(null);
     }
-    
-    @Override
-    @Transactional(readOnly=false)
-    public void delete(Integer id)
-    {
-        usuarioDao.deleteById(id);
-    }
+
+   
      
 }

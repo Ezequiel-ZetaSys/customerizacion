@@ -16,9 +16,9 @@ export class UsuarioService {
     return this.http.get(this.url);
   }
 
-  getUnUsuario(id: string):Observable<any>
+  getUnUsuario(user: string):Observable<any>
   {
-    return this.http.get(this.url+'/'+id);
+    return this.http.get(this.url+'/'+user);
   }
 
   saveUsuario(usuario: Usuario):Observable<any>
@@ -26,13 +26,4 @@ export class UsuarioService {
     return this.http.post(this.url, usuario);
   }
 
-  editUsuario(id:string, usuario: Usuario):Observable<any>
-  {
-    return this.http.put(this.url+'/'+id, usuario);
-  }
-
-  deleteUsuario(id:string):Observable<any>
-  {
-    return this.http.delete(this.url+'/'+id);
-  }
 }

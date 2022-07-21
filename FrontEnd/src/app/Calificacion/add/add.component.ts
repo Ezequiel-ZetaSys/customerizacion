@@ -22,7 +22,7 @@ export class AddComponent implements OnInit {
     this.calificacionService.saveCalificacion(this.calificacionNueva).subscribe(
       res=>{
         console.log(res);
-        this.router.navigate(['/listar']);
+        this.router.navigate(['inicio']);
       },
       err=>console.log(err)
     );

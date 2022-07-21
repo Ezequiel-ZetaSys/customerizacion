@@ -1,0 +1,30 @@
+
+<div class="container col-12 col-lg-12 mt-4">
+    <div class="row">
+      <div *ngIf="logueado"  class="col-auto">
+        <input (click)="Listar()" type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+        <label class="btn btn-secondary margenbutton" for="option1">Listado de Calificaciones</label>
+      </div>
+  
+      <div  class="col-auto">
+        <input (click)="Nuevo()" type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+        <label class="btn btn-secondary margenbutton" for="option2">Nueva Calificación</label>
+      </div>
+  
+      <div *ngIf="logueado === false" class="col-auto">
+        <input (click)="Login()" type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+        <label class="btn btn-secondary margenbutton" for="option3">Ingresar</label>
+      </div>
+  
+      <div *ngIf="logueado"  class="col-auto">
+        <input (click)="Login()" type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
+        <label class="btn btn-secondary margenbutton" for="option4">Salir</label>
+      </div>
+  
+      <div *ngIf="logueado === false"  class="col-auto">
+        <input (click)="Registrar()" type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
+        <label class="btn btn-secondary margenbutton" for="option5">Registro</label>
+      </div>
+  
+    </div>
+  </div>

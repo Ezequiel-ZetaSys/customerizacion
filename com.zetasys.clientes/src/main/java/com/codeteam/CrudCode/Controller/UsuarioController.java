@@ -9,11 +9,9 @@ import com.codeteam.CrudCode.Service.UsuarioService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,30 +41,15 @@ public class UsuarioController {
         return usuarioService.save(usuario);
     }
     
+    
     //leer un usuario
-    @GetMapping("/usuarios/{id}")
-    public Usuario getUnUsuario(@PathVariable Integer id)
+    @GetMapping("/usuarios/{user}")
+    public Usuario getUnUsuario(@PathVariable String user)
     {
-        return usuarioService.findById(id);
+        return usuarioService.findById(user);
     }
     
-    //Modificar
-    @PutMapping("/usuarios/{id}")
-    public Usuario modificar(@RequestBody Usuario usuario, @PathVariable Integer id)
-    {
-        Usuario usuarioActual= usuarioService.findById(id);
-        usuarioActual.setNombre(usuario.getNombre());
-        usuarioActual.setUser(usuario.getUser());
-        usuarioActual.setPass(usuario.getPass());
-
-        
-        return usuarioService.save(usuarioActual);
-    }  
+  
     
-    @DeleteMapping("/usuarios/{id}")
-    public void eliminar(@PathVariable Integer id)
-    {
-        usuarioService.delete(id);
-    }
     
 }
