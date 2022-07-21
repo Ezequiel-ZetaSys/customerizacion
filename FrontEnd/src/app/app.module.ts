@@ -3,24 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListarComponent } from './Persona/listar/listar.component';
-import { AddComponent } from './Persona/add/add.component';
-import { EditComponent } from './Persona/edit/edit.component';
+import { ListarComponent } from './Calificacion/listar/listar.component';
+import { AddComponent } from './Calificacion/add/add.component';
+import { EditComponent } from './Calificacion/edit/edit.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxStarRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

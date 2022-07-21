@@ -21,59 +21,61 @@ public class Calificacion {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="cal_id")
-    private Integer Id;
+    private Integer id;
     
     @Column(name="cal_nombre")
-    private String Nombre;
+    private String nombre;
     
     @Column(name="cal_correo")
-    private String Correo;
+    private String correo;
     
     @Column(name="cal_calificacion")
-    private Integer Calificacion;
+    private Integer calificacion;
         
     @Column(name="cal_observacion")
-    private String Obs;
+    private String obs;
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
-    public void setId(Integer Id) {
-        this.Id = Id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getCorreo() {
-        return Correo;
+        return correo;
     }
 
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public Integer getCalificacion() {
-        return Calificacion;
+        return calificacion;
     }
 
-    public void setCalificacion(Integer Calificacion) {
-        this.Calificacion = Calificacion;
+    public void setCalificacion(Integer calificacion) {
+        this.calificacion = calificacion;
     }
 
     public String getObs() {
-        return Obs;
+        return obs;
     }
 
-    public void setObs(String Obs) {
-        this.Obs = Obs;
+    public void setObs(String obs) {
+        this.obs = obs;
     }
+
+  
     
 
 

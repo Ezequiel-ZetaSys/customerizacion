@@ -13,8 +13,7 @@ import java.util.List;
  */
 public interface CalificacionService {
     public List<Calificacion> findAll();
-    public Calificacion save(Calificacion tarea);
+    public Calificacion save(Calificacion calificacion);
     public Calificacion findById(Integer id);
-    public void delete(Integer id);
-    
+    public void delete(Integer id);  
 }

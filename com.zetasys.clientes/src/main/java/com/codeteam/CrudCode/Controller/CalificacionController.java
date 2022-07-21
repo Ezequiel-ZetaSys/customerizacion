@@ -38,28 +38,30 @@ public class CalificacionController {
     
     //guardar
     @PostMapping("/calificaciones")
-    public  Calificacion guardar(@RequestBody Calificacion calificacion)
+    public Calificacion save(@RequestBody Calificacion calificacion)
     {
         return calificacionService.save(calificacion);
     }
     
-    //get una calificacion
+    //leer una calificación
     @GetMapping("/calificaciones/{id}")
     public Calificacion getUnaCalificacion(@PathVariable Integer id)
     {
         return calificacionService.findById(id);
     }
     
-    //Modeficar
+    //Modificar
     @PutMapping("/calificaciones/{id}")
-    public Calificacion modifecar(@RequestBody Calificacion calificacion,@PathVariable Integer id)
+    public Calificacion modificar(@RequestBody Calificacion calificacion, @PathVariable Integer id)
     {
         Calificacion calificacionActual= calificacionService.findById(id);
+        calificacionActual.setNombre(calificacion.getNombre());
+        calificacionActual.setCorreo(calificacion.getCorreo());
         calificacionActual.setCalificacion(calificacion.getCalificacion());
         calificacionActual.setObs(calificacion.getObs());
         
         return calificacionService.save(calificacionActual);
-    }
+    }  
     
     @DeleteMapping("/calificaciones/{id}")
     public void eliminar(@PathVariable Integer id)

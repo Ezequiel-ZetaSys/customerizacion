@@ -17,7 +17,7 @@ export class ListarComponent implements OnInit {
 
   listarCalificacion()
   {
-    this.calificacionService.getCalificacion().subscribe(
+    this.calificacionService.getCalificaciones().subscribe(
       res=>{
         this.lista=res;
         console.log(res);

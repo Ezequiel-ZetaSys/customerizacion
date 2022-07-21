@@ -18,34 +18,34 @@ import com.codeteam.CrudCode.Dao.CalificacionDao;
 @Service
 public class CalificacionServiceImplement  implements CalificacionService{
     @Autowired
-    private CalificacionDao tareaDao;
+    private CalificacionDao calificacionDao;
     
     @Override
     @Transactional(readOnly=true)
     public List<Calificacion> findAll()
     {
-        return (List<Calificacion>) tareaDao.findAll();
+        return (List<Calificacion>) calificacionDao.findAll();
     }
     
     @Override
      @Transactional(readOnly=false)
-    public Calificacion save(Calificacion tarea)
+    public Calificacion save(Calificacion calificacion)
     {
-        return tareaDao.save(tarea);
+        return calificacionDao.save(calificacion);
     }
     
     @Override
-     @Transactional(readOnly=true)
+    @Transactional(readOnly=true)
     public Calificacion findById(Integer id)
     {
-        return tareaDao.findById(id).orElse(null);
+        return calificacionDao.findById(id).orElse(null);
     }
     
     @Override
-     @Transactional(readOnly=false)
+    @Transactional(readOnly=false)
     public void delete(Integer id)
     {
-        tareaDao.deleteById(id);
+        calificacionDao.deleteById(id);
     }
-    
+     
 }

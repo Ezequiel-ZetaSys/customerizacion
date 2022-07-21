@@ -1,15 +1,17 @@
-<div class="container col-12 col-lg-6 mt-4">
+<div class="container col-12 col-lg-8 mt-4">
     <div class="card">
         <div class="card-header">
             <h3 class="title">Listado de Calificaciones</h3>
         </div>
         <div class="card-body">
-            <table class="table table-hover table-responsive">
+            <table class="table table-responsive">
                 <thead>
                     <tr>
                         <th>Id</th>
                         <th>Nombres</th>
-                        <th>Correo</th>
+                        <th>Correos</th>
+                        <th>Calificaciones</th>
+                        <th>Observaciones</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -18,13 +20,16 @@
                         <td>{{cal.id}}</td>
                         <td>{{cal.nombre}}</td>
                         <td>{{cal.correo}}</td>
+                        <td>{{cal.calificacion}}</td>
+                        <td>{{cal.obs}}</td>
                         <td>
-                            <button class="btn btn-warning margenbutton">Editar</button>
-                            <button class="btn btn-danger">Eliminar</button>
+                            <button class="btn btn-danger margenbutton" (click)="eliminar(cal.id)">Eliminar</button>
+                            <button class="btn btn-warning" [routerLink]="['/edit/',cal.id]" routerLinkActive="router-link-active" >Editar</button>
                         </td>
                     </tr>
                 </thead>
             </table>
         </div>
     </div>
-</div>
+</div> 
+<router-outlet></router-outlet>
