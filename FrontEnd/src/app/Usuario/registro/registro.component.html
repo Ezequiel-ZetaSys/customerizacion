@@ -1,0 +1,24 @@
+<div class="container col-12 col-lg-4 mt-4">
+    <h3 class="title"> Registro de Usuario </h3>
+    <form>
+      <div class="form-group">
+        <label for="nombre">Nombre (*)</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="usuarioNuevo.nombre" placeholder="Ezequiel Portillo">
+      </div>
+      <div class="form-group">
+        <label for="correo">User (*)</label>
+        <input type="text" class="form-control" id="user" name="user" [(ngModel)]="usuarioNuevo.user" placeholder="User123">
+      </div>
+      <div class="form-group">
+        <label for="correo">Pass (*)</label>
+        <input type="text" class="form-control" id="pass" name="pass" [(ngModel)]="usuarioNuevo.pass" placeholder="123456">
+      </div>
+
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success margenbutton" (click)="registrarUsuario()">Guardar</button>
+        <button type="button" class="btn btn-danger margenbutton">Cancelar</button>
+        <button type="button" class="btn btn-secondary margenbutton">Salir</button>
+      </div>
+    </form>
+  </div>

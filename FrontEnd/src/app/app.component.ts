@@ -7,7 +7,6 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Customizacion';
 
   constructor (private router:Router){
 
@@ -17,5 +16,11 @@ export class AppComponent {
   }
   Nuevo(){
     this.router.navigate(["add"]);
+  }
+  Registrar(){
+    this.router.navigate(["registro"]);
+  }
+  Login(){
+    this.router.navigate(["login"]);
   }
 }
