@@ -5,7 +5,7 @@
             <h3 class="title">Listado de Calificaciones</h3>
         </div>
         <div class="card-body">
-            <table class="table table-responsive">
+            <table class="table table-responsive table-hover">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -18,12 +18,12 @@
                 </thead>
                 <thead>
                     <tr *ngFor="let cal of lista">
-                        <td>{{cal.id}}</td>
+                        <td class="text-center">{{cal.id}}</td>
                         <td>{{cal.nombre}}</td>
                         <td>{{cal.correo}}</td>
                         <td>
                             <div class="d-flex rating-list align-items-center">       
-                                <div class="star w-15 rating-star">
+                                <div class="star w-155 rating-star">
                                     <ngx-star-rating [disabled]="true"
                                     id="calificacion" name="calificacion" [(ngModel)]="cal.calificacion">
                                     </ngx-star-rating>

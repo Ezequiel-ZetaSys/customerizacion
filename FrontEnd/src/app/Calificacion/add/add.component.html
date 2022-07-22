@@ -1,15 +1,20 @@
 <app-inicio></app-inicio>
 
 <div class="container col-12 col-lg-4 mt-4">
+  <h6 class="bg.info">Para ver el listado de calificaciones debe registrarse he iniciar sesion</h6>
     <h3 class="title"> Formulario de Calificación </h3>
-    <form>
+    <form  (ngSubmit)="agregarCalificacion()" #f="ngForm">
       <div class="form-group">
         <label for="nombre">Nombre (*)</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="calificacionNueva.nombre" placeholder="Ezequiel Portillo">
+        <input type="text" class="form-control" id="nombre" name="nombre"  
+        [(ngModel)]="calificacionNueva.nombre" required>
       </div>
+        
       <div class="form-group">
         <label for="correo">Correo (*)</label>
-        <input type="email" class="form-control" id="correo" name="correo" [(ngModel)]="calificacionNueva.correo" placeholder="zetasys777@example.com">
+        <input type="email" class="form-control" id="correo" name="correo" 
+        [(ngModel)]="calificacionNueva.correo" placeholder="zetasys777@example.com"
+        required minlength="8">
       </div>
 
 
@@ -18,13 +23,12 @@
         <div class="d-flex rating-list align-items-center">       
             <div class="star w-30 rating-star">
                 <ngx-star-rating 
-                id="calificacion" name="calificacion" [(ngModel)]="calificacionNueva.calificacion">
+                id="calificacion" name="calificacion" [(ngModel)]="calificacionNueva.calificacion"
+                required>
                 </ngx-star-rating>
             </div>
         </div>
        </div>
-
-
 
       <div class="form-group">
         <label for="obs">Observaciones</label>
@@ -33,9 +37,7 @@
 
 
       <div class="form-group">
-        <button type="submit" class="btn btn-success margenbutton" (click)="agregarCalificacion()">Guardar</button>
-        <button type="button" class="btn btn-danger margenbutton">Cancelar</button>
-        <button type="button" class="btn btn-secondary margenbutton">Salir</button>
+        <button type="submit" class="btn btn-success margenbutton" [disabled]="f.invalid">Guardar</button>
       </div>
     </form>
 

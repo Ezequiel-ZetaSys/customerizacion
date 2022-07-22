@@ -2,9 +2,8 @@ import { APP_BOOTSTRAP_LISTENER, Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/Service/service.usuario';
 import { Usuario } from 'src/app/Modelo/Usuario';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppComponent } from 'src/app/app.component';
-import { ListarComponent } from 'src/app/Calificacion/listar/listar.component';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -28,15 +27,29 @@ export class LoginComponent implements OnInit {
       res=>{
         this.usuario=res;
         if (this.usuario.pass === pass) {
-            console.log("Ingreso existoso");
+            Swal.fire(
+              'Ingreso Exitoso',
+              'Bienvenido: ' + this.usuario.nombre,
+              'info'
+            ) 
             environment.logueado = true;
-            this.router.navigate(['inicio']);
+            this.router.navigate(['listar']);
         } else {
-            console.log("Usuario o contraseña incorrectos");
+          Swal.fire(
+            'Usuario o Pass Incorrecta',
+            'Verifique si la ha escrito correctamente ',
+            'error'
+          ) 
             environment.logueado = true;
         }
       },
-      err=>console.log(err)
+      err=>{
+        Swal.fire(
+          'No se pudo establecer Conexión',
+          'Detalle de error: ' + console.log(err),
+          'error'
+        )      
+      }
     );
   }
 

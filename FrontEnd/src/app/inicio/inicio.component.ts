@@ -24,5 +24,9 @@ export class InicioComponent  {
   Login(){
     this.router.navigate(["login"]);
   }
+  Salir(){
+    environment.logueado = false;
+    this.router.navigate(["inicio"]);
+  }
 
 }
