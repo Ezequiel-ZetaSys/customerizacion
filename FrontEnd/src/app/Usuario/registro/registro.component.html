@@ -1,25 +1,23 @@
 <app-inicio></app-inicio>
 <div class="container col-12 col-lg-4 mt-4">
     <h3 class="title"> Registro de Usuario </h3>
-    <form>
+    <form (ngSubmit)="registrarUsuario()" #f="ngForm">
       <div class="form-group">
         <label for="nombre">Nombre (*)</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="usuarioNuevo.nombre" placeholder="Ezequiel Portillo" >
+        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="usuarioNuevo.nombre" placeholder=""  required minlength="3">
       </div>
       <div class="form-group">
         <label for="correo">User (*)</label>
-        <input type="text" class="form-control" id="user" name="user" [(ngModel)]="usuarioNuevo.user" placeholder="User123" >
+        <input type="text" class="form-control" id="user" name="user" [(ngModel)]="usuarioNuevo.user" placeholder="" required minlength="3">
       </div>
       <div class="form-group">
         <label for="correo">Pass (*)</label>
-        <input type="password" class="form-control" id="pass" name="pass" [(ngModel)]="usuarioNuevo.pass" placeholder="123456">
+        <input type="password" class="form-control" id="pass" name="pass" [(ngModel)]="usuarioNuevo.pass" placeholder="" required minlength="3">
       </div>
 
 
       <div class="form-group">
-        <button type="submit" class="btn btn-success margenbutton" (click)="registrarUsuario()">Guardar</button>
-        <button type="button" class="btn btn-danger margenbutton">Cancelar</button>
-        <button type="button" class="btn btn-secondary margenbutton">Salir</button>
+        <button type="submit" class="btn btn-success margenbutton" >Guardar</button>
       </div>
     </form>
   </div>

@@ -1,7 +1,7 @@
 import { APP_BOOTSTRAP_LISTENER, Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/Service/service.usuario';
 import { Usuario } from 'src/app/Modelo/Usuario';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
@@ -14,8 +14,7 @@ export class LoginComponent implements OnInit {
   usuario: Usuario={id:0,nombre:'',user:'',pass:''};
 
   constructor(private usuarioService: UsuarioService, 
-               private router:Router,
-              private antivateRouter: ActivatedRoute,) 
+               private router:Router,) 
      { }
 
   ngOnInit(): void {
@@ -25,7 +24,12 @@ export class LoginComponent implements OnInit {
   ingresar(user: string, pass: string){
     this.usuarioService.getUnUsuario(user).subscribe(
       res=>{
-        this.usuario=res;
+        if(res!== null){
+          this.usuario=res;
+        }else{
+          this.usuario = {id:0,nombre:'',user:'',pass:''};
+        }
+        
         if (this.usuario.pass === pass) {
             Swal.fire(
               'Ingreso Exitoso',

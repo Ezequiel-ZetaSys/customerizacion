@@ -42,6 +42,20 @@ public class CalificacionServiceImplement  implements CalificacionService{
     }
     
     @Override
+    @Transactional(readOnly=true)
+    public Calificacion getCorreoRepetido(String correo)
+    {
+        List<Calificacion> calificacion = findAll();
+        int id = 0;
+        for (Calificacion task: calificacion) {
+            if (task.getCorreo().equals(correo)) {
+                id = task.getId();
+            }
+        }
+        return calificacionDao.findById(id).orElse(null);
+    }
+    
+    @Override
     @Transactional(readOnly=false)
     public void delete(Integer id)
     {

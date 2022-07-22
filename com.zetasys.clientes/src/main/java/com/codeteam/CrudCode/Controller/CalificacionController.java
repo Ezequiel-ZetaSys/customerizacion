@@ -43,12 +43,14 @@ public class CalificacionController {
         return calificacionService.save(calificacion);
     }
     
-    //leer una calificación
-    @GetMapping("/calificaciones/{id}")
-    public Calificacion getUnaCalificacion(@PathVariable Integer id)
+    
+     //leer un correo
+    @GetMapping("/calificaciones/{correo}")
+    public Calificacion getCorreoRepetido(@PathVariable String correo)
     {
-        return calificacionService.findById(id);
+        return calificacionService.getCorreoRepetido(correo);
     }
+    
     
     //Modificar
     @PutMapping("/calificaciones/{id}")

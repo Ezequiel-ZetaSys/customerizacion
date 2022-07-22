@@ -16,19 +16,14 @@ export class CalificacionService {
     return this.http.get(this.url);
   }
 
-  getUnaCalificacion(id: string):Observable<any>
+  getCorreoRepetido(correo: string):Observable<any>
   {
-    return this.http.get(this.url+'/'+id);
+    return this.http.get(this.url+'/'+correo);
   }
 
   saveCalificacion(calificacion: Calificacion):Observable<any>
   {
     return this.http.post(this.url, calificacion);
-  }
-
-  editCalificacion(id:string, calificacion: Calificacion):Observable<any>
-  {
-    return this.http.put(this.url+'/'+id, calificacion);
   }
 
   deleteCalificacion(id:string):Observable<any>

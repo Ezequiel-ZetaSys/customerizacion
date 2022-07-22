@@ -47,7 +47,6 @@ public class UsuarioServiceImplement  implements UsuarioService{
         }
         return usuarioDao.findById(id).orElse(null);
     }
-
-   
-     
+    
+    
 }

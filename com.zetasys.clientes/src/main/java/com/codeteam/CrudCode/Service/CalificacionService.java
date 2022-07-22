@@ -15,5 +15,6 @@ public interface CalificacionService {
     public List<Calificacion> findAll();
     public Calificacion save(Calificacion calificacion);
     public Calificacion findById(Integer id);
+    public Calificacion getCorreoRepetido(String correo);
     public void delete(Integer id);  
 }
