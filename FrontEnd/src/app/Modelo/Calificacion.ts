@@ -4,4 +4,5 @@ export interface Calificacion {
     correo:string;
     calificacion:number;
     obs:string;
+    contacto:string;
 }

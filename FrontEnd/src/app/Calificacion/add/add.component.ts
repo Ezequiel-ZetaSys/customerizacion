@@ -13,7 +13,7 @@ import { ListarComponent } from '../listar/listar.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddComponent implements OnInit {
-  calificacionNueva: Calificacion={id:0,nombre:'',correo:'',calificacion:5,obs:''};
+  calificacionNueva: Calificacion={id:0,nombre:'',correo:'',calificacion:5,obs:'', contacto:''};
   valido = true;
   mensaje = "";
   existeCorreo = "";

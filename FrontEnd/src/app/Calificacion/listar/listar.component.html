@@ -29,6 +29,9 @@
                                     </ngx-star-rating>
                                 </div>
                             </div>
+                            <span class="btn btn-info" *ngIf="cal.calificacion < 3">
+                                {{cal.contacto}}
+                            </span>
                         </td>
                         <td>{{cal.obs}}</td>
                         <td>

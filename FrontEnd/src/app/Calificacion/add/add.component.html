@@ -30,6 +30,12 @@
         </div>
        </div>
 
+       <div class="form-group" *ngIf="calificacionNueva.calificacion < 3">
+        <label for="contacto">Datos de contacto </label>
+        <input type="text" class="form-control" id="contacto" name="contacto"  
+        [(ngModel)]="calificacionNueva.contacto">        
+      </div>
+
       <div class="form-group">
         <label for="obs">Observaciones</label>
         <textarea class="form-control" id="obs" name="obs" [(ngModel)]="calificacionNueva.obs" rows="1"></textarea>

@@ -34,9 +34,20 @@ public class Calificacion {
         
     @Column(name="cal_observacion")
     private String obs;
+    
+    @Column(name="cal_contacto")
+    private String contacto;
 
     public Integer getId() {
         return id;
+    }
+
+    public String getContacto() {
+        return contacto;
+    }
+
+    public void setContacto(String contacto) {
+        this.contacto = contacto;
     }
 
     public void setId(Integer id) {
